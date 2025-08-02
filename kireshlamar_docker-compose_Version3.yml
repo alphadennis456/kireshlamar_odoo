@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  web:
+    build: .
+    ports:
+      - "8069:8069"
+    environment:
+      - DB_HOST=dpg-d26k3c95pdvs73a7ciug-a.frankfurt-postgres.render.com
+      - DB_PORT=5432
+      - DB_USER=kireshlamar_db_user
+      - DB_PASSWORD=4iNX6hXHTUsdjeoTDTQcgOFrd8WCSLW4
+      - DB_NAME=kireshlamar_db
+    volumes:
+      - ./custom_addons:/mnt/extra-addons
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: kireshlamar_db
+      POSTGRES_USER: kireshlamar_db_user
+      POSTGRES_PASSWORD: 4iNX6hXHTUsdjeoTDTQcgOFrd8WCSLW4
+    ports:
+      - "5432:5432"
+    restart: always

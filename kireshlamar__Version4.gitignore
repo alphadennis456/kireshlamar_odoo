@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.db
+*.dat
+*.egg-info/
+.venv/
+.env
+.idea/
+.vscode/
+*.zip
+*.pid
+custom_addons/*/node_modules/
